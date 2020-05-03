@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      
+      google.charts.load('current', {'packages':['corechart']});
+
+      
+      google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawpChart);
+
+     
+      function drawChart() {
+
+        
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Race');
+        data.addColumn('number', 'Cases');
+        data.addRows([
+          ['American Indian', 73],
+          ['Asian or Pacific Islander', 259],
+          ['Black', 1718],
+          ['White', 4039],
+          ['Multiple or Other Races', 692],
+          ['Unknown', 879]
+        ]);
+
+        var options = {'title':'Covid-19 Cases by Race in Wisconsin, Updated 5/1/20',
+                       'width':700,
+                       'height':600};
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+          
+          
+      }
+    
+        function drawpChart() {
+
+        
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Race');
+        data.addColumn('number', 'People');
+        data.addRows([
+          ['American Indian', 69869],
+          ['Asian or Pacific Islander', 174673],
+          ['Black', 390103],
+          ['White', 5065517],
+          ['Multiple or Other Races', 116448]
+        ]);
+
+        var options = {'title':'Wisconson Racial Demographics',
+                       'width':700,
+                       'height':600};
+
+        var chart = new google.visualization.PieChart(document.getElementById('pchart_div'));
+        chart.draw(data, options);
+          
+          
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <div id="chart_div"></div>
+    <div id="pchart_div"></div>
+  </body>
+</html>
